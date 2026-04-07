@@ -1,0 +1,131 @@
+:root {
+  --bg-main: #121212;
+  --bg-soft: #16181d;
+  --surface: #2b2b2f;
+  --surface-2: #3a3a3f;
+
+  --border-strong: #000000;
+  --border-soft: #45454d;
+
+  --text-main: #f5f5f5;
+  --text-muted: #8fa1c0;
+
+  --accent-green: #53ff45;
+  --accent-green-hover: #41e535;
+  --accent-cyan: #5be8ff;
+  --accent-yellow: #ffc533;
+  --accent-pink: #e85dff;
+
+  --shadow-hard: 6px 6px 0 #000000;
+  --shadow-hard-sm: 4px 4px 0 #000000;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --container-width: 1320px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+body {
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.container {
+  width: min(var(--container-width), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.pixel-card {
+  background: var(--surface);
+  border: 4px solid var(--border-strong);
+  box-shadow: var(--shadow-hard);
+}
+
+.pixel-card-sm {
+  background: var(--surface);
+  border: 3px solid var(--border-strong);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.btn-forge {
+  border: 4px solid #000;
+  box-shadow: var(--shadow-hard-sm);
+  padding: 14px 22px;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+.btn-forge:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+.btn-green {
+  background: var(--accent-green);
+  color: #000;
+}
+
+.btn-green:hover {
+  background: var(--accent-green-hover);
+}
+
+.btn-dark {
+  background: var(--surface);
+  color: var(--text-main);
+}
+
+.btn-cyan {
+  background: var(--accent-cyan);
+  color: #000;
+}
+
+.btn-yellow {
+  background: var(--accent-yellow);
+  color: #000;
+}
+
+.btn-pink {
+  background: var(--accent-pink);
+  color: #000;
+}
+
+.section-title {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 900;
+}
+
+.section-muted {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}

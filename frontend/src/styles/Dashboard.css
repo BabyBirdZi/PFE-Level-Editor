@@ -1,0 +1,441 @@
+.dashboard-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(83, 255, 69, 0.10), transparent 22%),
+    radial-gradient(circle at 85% 80%, rgba(91, 232, 255, 0.08), transparent 20%),
+    linear-gradient(180deg, #141414 0%, #101010 100%);
+  color: var(--text-main);
+}
+
+.dashboard-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+  background: rgba(59, 59, 63, 0.95);
+  border-bottom: 4px solid #000;
+}
+
+.dashboard-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.dashboard-brand-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dashboard-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dashboard-search {
+  width: 360px;
+  border: 4px solid #000;
+  background: #555;
+  color: #ddd;
+  padding: 14px 16px;
+  outline: none;
+}
+
+.dashboard-search::placeholder {
+  color: var(--text-muted);
+}
+
+.dashboard-logout-green {
+  min-width: 130px;
+}
+
+.dashboard-content {
+  padding: 34px 20px 26px;
+}
+
+.dashboard-top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+  gap: 20px;
+}
+
+.dashboard-top-section h1 {
+  margin: 0 0 8px;
+  font-size: 3.2rem;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.dashboard-top-section p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.create-realm-btn {
+  min-width: 360px;
+}
+
+.empty-text {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.realm-card {
+  background: #3a3a3f;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.realm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 #000, 0 0 20px rgba(83, 255, 69, 0.18);
+}
+
+.realm-preview {
+  height: 250px;
+  background: linear-gradient(180deg, #5f7065 0%, #596961 100%);
+  border-bottom: 4px solid #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.realm-preview-grid {
+  width: 78%;
+  height: 78%;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  gap: 1px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.preview-cell {
+  width: 100%;
+  height: 100%;
+}
+
+.preview-empty {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.preview-wall {
+  background: #69707a;
+}
+
+.preview-collectible {
+  background: var(--accent-yellow);
+}
+
+.preview-enemy {
+  background: var(--accent-pink);
+}
+
+.preview-playerstart {
+  background: var(--accent-cyan);
+}
+
+.preview-exit {
+  background: var(--accent-green);
+}
+
+.realm-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 10px 18px;
+  border: 4px solid #000;
+  box-shadow: var(--shadow-hard-sm);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.realm-badge.draft {
+  background: var(--accent-yellow);
+  color: #000;
+}
+
+.realm-badge.saved {
+  background: var(--accent-green);
+  color: #000;
+}
+
+.realm-preview-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.realm-preview:hover .realm-preview-overlay {
+  opacity: 1;
+}
+
+.preview-overlay-btn {
+  width: 64px;
+  height: 64px;
+  border: none;
+  cursor: pointer;
+  background: #ffffff;
+  color: #000;
+  font-size: 1.5rem;
+}
+
+.preview-overlay-btn.cyan-hover {
+  background: var(--accent-cyan);
+}
+
+.realm-body {
+  padding: 20px;
+}
+
+.realm-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.realm-header-row h3 {
+  margin: 0;
+  font-size: 2.1rem;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--accent-green);
+}
+
+.realm-menu-wrapper {
+  position: relative;
+}
+
+.realm-menu-btn {
+  width: 52px;
+  height: 52px;
+  border: none;
+  cursor: pointer;
+  color: #ddd;
+  background: #4a4a4e;
+  font-size: 1.2rem;
+}
+
+.realm-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 150px;
+  background: #444449;
+  display: grid;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.realm-dropdown-menu button {
+  border: none;
+  background: transparent;
+  color: white;
+  text-align: left;
+  padding: 12px 14px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.realm-dropdown-menu button:hover {
+  background: #5b5b60;
+}
+
+.realm-meta-row {
+  margin-bottom: 18px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.realm-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.realm-action-btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.analyze-btn {
+  flex: 1;
+  background: #4a4a4e;
+  color: white;
+  padding: 16px 18px;
+  text-transform: uppercase;
+}
+
+.delete-btn {
+  width: 72px;
+  background: #5b355f;
+  color: #ff74ff;
+  font-size: 1.2rem;
+}
+
+.delete-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2600;
+  padding: 20px;
+}
+
+.delete-modal {
+  width: 100%;
+  max-width: 460px;
+  background: #3a3a3f;
+  padding: 24px;
+}
+
+.delete-modal h3 {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.delete-modal p {
+  margin: 0 0 18px;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+}
+
+.delete-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.rename-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2500;
+  padding: 20px;
+}
+
+.rename-modal {
+  width: 100%;
+  max-width: 460px;
+  background: #3a3a3f;
+  padding: 24px;
+}
+
+.rename-modal h3 {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.rename-modal p {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+}
+
+.rename-modal-input {
+  width: 100%;
+  border: 4px solid #000;
+  background: #555;
+  color: white;
+  padding: 14px 16px;
+  outline: none;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.rename-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.realm-action-btn:hover,
+.realm-menu-btn:hover,
+.preview-overlay-btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .dashboard-top-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .create-realm-btn {
+    min-width: 100%;
+  }
+
+  .dashboard-search {
+    width: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-navbar {
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .dashboard-navbar-right {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .dashboard-search {
+    width: 100%;
+  }
+
+  .dashboard-brand {
+    font-size: 1.6rem;
+  }
+
+  .dashboard-top-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .dashboard-logout-green {
+    width: 100%;
+  }
+}
